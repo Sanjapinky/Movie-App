@@ -1,0 +1,29 @@
+api:
+  api-context:
+    key: ${TMDB_API_KEY}
+    movies:
+      top-rated: https://api.themoviedb.org/3/movie/top_rated?api_key={apiKey}&language=en-US&page=1&region=DE
+      latest: https://api.themoviedb.org/3/movie/now_playing?api_key={apiKey}&language=en-US&page=1&region=DE
+      most-popular: https://api.themoviedb.org/3/movie/popular?api_key={apiKey}&language=en-US&page=1&region=DE
+      upcoming: https://api.themoviedb.org/3/movie/upcoming?api_key={apiKey}&language=en-US&page=1&region=DE
+    tv:
+      top-rated: https://api.themoviedb.org/3/tv/top_rated?api_key={apiKey}&language=en-US&page=1&region=DE
+      most-popular: https://api.themoviedb.org/3/tv/popular?api_key={apiKey}&language=en-US&page=1&region=DE
+    people:
+      most-popular: https://api.themoviedb.org/3/person/popular?api_key={apiKey}&language=en-US&page=1&region=DE
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+rsa:
+  private-key: classpath:certificates/private.pem
+  public-key: classpath:certificates/public.pem
+
